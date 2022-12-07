@@ -1,4 +1,5 @@
 mod source_position_marker;
+mod pair_literal_parsing;
 
 pub fn add(left: usize, right: usize) -> usize {
     left + right
@@ -6,8 +7,6 @@ pub fn add(left: usize, right: usize) -> usize {
 
 #[cfg(test)]
 mod tests {
-    use crate::source_position_marker::CharWithSourcePosition;
-
     use super::*;
 
     #[test]

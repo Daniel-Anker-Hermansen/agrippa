@@ -7,6 +7,14 @@ pub struct SourceRange<'a> {
     pub end: SourcePosition,
 }
 
+impl SourceRange<'_> {
+    pub fn combine(mut self, other: Self) -> Self {
+        assert_eq!(self.uri, other.uri);
+        self.end = other.end;
+        self
+    }
+}
+
 /// Represents a point in the source file.
 /// This is zero indexed
 #[derive(Debug, Clone, Copy)]
